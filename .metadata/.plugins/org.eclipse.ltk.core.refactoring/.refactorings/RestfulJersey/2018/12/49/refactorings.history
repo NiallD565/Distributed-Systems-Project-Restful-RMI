@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;DatabaseService.java&apos; to &apos;RestfulJersey/src/main/java/ie.gmit.sw.RMI&apos;&#x0D;&#x0A;- Original project: &apos;RestfulJersey&apos;&#x0D;&#x0A;- Destination element: &apos;RestfulJersey/src/main/java/ie.gmit.sw.RMI&apos;&#x0D;&#x0A;- Original element: &apos;ie.gmit.sw.RestfulJersey.DatabaseService.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java&lt;ie.gmit.sw.RMI" element1="/src\/main\/java&lt;ie.gmit.sw.RestfulJersey{DatabaseService.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1544202150324" units="1" version="1.0"/>
+</session>

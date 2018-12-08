@@ -1,0 +1,8 @@
+package ie.gmit.DAO;
+
+public class mySQLDAO {
+
+	public void read() {
+		System.out.println("Get Stuff");
+	}
+}

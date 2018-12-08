@@ -1,0 +1,48 @@
+package ie.gmit.sw.RMI;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import ie.gmit.sw.Model.Order;
+
+public class DatabaseServiceImpl extends UnicastRemoteObject implements DatabaseService{
+
+	private static final long serialVersionUID = 1l;
+	private Connection conn;
+	private Statement stmt;
+	
+	protected DatabaseServiceImpl() throws RemoteException, SQLException {
+		super();
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/CUSTOMERCARS?useSSL=false", "root", "");
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public List<Order> read() throws SQLException {
+		System.out.println("In read");
+		
+		stmt = conn.createStatement();
+				
+		List<Order> List = new ArrayList<Order>();
+		String strSelect = "select * from orders ORDER BY OrderID";
+		
+		ResultSet rset = stmt.executeQuery(strSelect);
+		
+		while (rset.next()) { 
+			int OrderID = rset.getInt("OrderID");
+			Date Date = rset.getDate("Date");
+			int cust = rset.getInt("CustID");
+			int car = rset.getInt("CarID");
+
+			//Order s = new Order(OrderID, Date, cust, car);
+			List.add(s);
+		}
+		return List;
+		
+		return null;
+	}
+
+}

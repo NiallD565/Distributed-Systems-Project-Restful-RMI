@@ -1,0 +1,14 @@
+package ie.gmit.sw.Model;
+
+import java.util.*;
+import java.io.Serializable;
+
+public class Order implements Serializable{
+	
+	private static final long serialVersionUID = 1l;
+	
+	private int OrderID;
+	private Date Date;
+	private int cust;
+	private int car;
+}

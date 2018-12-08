@@ -1,0 +1,40 @@
+package ie.gmit.sw;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import ie.gmit.DAO.mySQLDAO;
+
+public class DatabaseServiceImpl extends UnicastRemoteObject implements DatabaseService {
+
+	protected DatabaseServiceImpl() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String Create(String s) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void Read() throws RemoteException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String Update(String s) throws RemoteException {
+		// TODO Auto-generated method stub
+		mySQLDAO().getData();
+		
+		return s;
+	}
+
+	@Override
+	public String Delete(String s) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

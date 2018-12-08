@@ -1,0 +1,17 @@
+package ie.gmit.sw;
+
+import java.rmi.*;
+import java.rmi.registry.LocateRegistry;
+
+public class ServiceSetup {
+	public static void main(String[] args) throws Exception{
+		
+		DatabaseService ds = new DatabaseServiceImpl();
+		
+		LocateRegistry.createRegistry(1099);
+		
+		Naming.rebind("databaseservice", ds);
+		
+		System.out.println("Server running");
+	}
+}

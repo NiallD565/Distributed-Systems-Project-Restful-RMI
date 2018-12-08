@@ -1,0 +1,30 @@
+package ie.gmit.models;
+
+public class Accounts {
+	private String Name;
+	private int Age;
+
+	public Accounts(String name, int age) {
+		super();
+		Name = name;
+		Age = age;
+	}
+	
+	public String getName() {
+		
+		return Name;
+	}
+	
+	public void setName(String name) {
+		Name = name;
+	}
+	
+	public int getAge() {
+		return Age;
+		
+	}
+	
+	public void setAge(int age) {
+		Age = age;
+	}
+}
