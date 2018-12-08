@@ -41,7 +41,7 @@ public class ObjectFactory {
      * 
      */
     public Order createOrder() {
-        return new Order();
+        return new Order(0, null, 0, 0);
     }
 
 }

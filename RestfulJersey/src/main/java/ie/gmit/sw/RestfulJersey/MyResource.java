@@ -36,7 +36,7 @@ public class MyResource {
     @Path("/read")
     public List<Order> getIt() throws MalformedURLException, RemoteException, NotBoundException, SQLException {
     	DatabaseService ds;
-    	ds = (DatabaseService) Naming.lookup("rmi://127.0.0.1:1099/database");
+    	ds = (DatabaseService) Naming.lookup("rmi://127.0.0.1:1099/JDBC");
     	
     	ds.read();
         return ds.read();
