@@ -17,7 +17,7 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 	protected DatabaseServiceImpl() throws RemoteException, SQLException {
 		super();
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/CUSTOMERCARS?useSSL=false", "root", "");
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 		stmt = conn.createStatement();
 
 		List<Order> List = new ArrayList<Order>();
-		String strSelect = "select * from orders ORDER BY OrderID";
+		String strSelect = "select * from Orders;";
 
 		ResultSet dataset = stmt.executeQuery(strSelect);
 
@@ -37,8 +37,8 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 			int cust = dataset.getInt("CustID");
 			int car = dataset.getInt("CarID");
 
-			Order s = new Order(OrderID, Date, cust, car);
-			// Order s = new Order(car, Date, car, car);
+			//Order s = new Order();
+			Order s = new Order(OrderID, Date, car, cust);
 
 			s.setOrderID(OrderID);
 			s.setDate(Date);
@@ -46,19 +46,19 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 			s.setCust(cust);
 
 			List.add(s);
+			System.out.println(s);
 		}
+		System.out.println(List);
 		return List;
 	}
 
 	@Override
 	public void createOrder(Order order) throws RemoteException, SQLException {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void deleteOrder(Order order) throws RemoteException, SQLException {
-		// TODO Auto-generated method stub
 		
 	}
 

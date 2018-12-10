@@ -5,7 +5,6 @@
 		<complexType>
 			<sequence>
 				<element name="OrderID" type="int"></element>
-				<element name="OrderNumber" type="int"></element>
 				<element name="Date" type="date"></element>
 				<element name="car" type="int"></element>
 				<element name="cust" type="int"></element>
