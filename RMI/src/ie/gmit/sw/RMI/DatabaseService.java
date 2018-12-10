@@ -7,8 +7,10 @@ import java.sql.SQLException;
 
 import ie.gmit.sw.Model.Order;
 
-import ie.gmit.sw.RMI.*;
-
 public interface DatabaseService extends Remote{
 	public List<Order> read() throws RemoteException, SQLException;
+	
+	void createOrder(Order order)throws RemoteException, SQLException;
+	
+	void deleteOrder(Order order)throws RemoteException, SQLException;
 }

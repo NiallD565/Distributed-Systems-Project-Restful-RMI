@@ -14,6 +14,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -48,9 +50,14 @@ import java.util.Date;
     "cust"
 })
 @XmlRootElement(name = "Order")
-public class Order {
+public class Order implements Serializable{
 
-    public Order(int orderID, Date date, int car, int cust) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Order(int orderID, Date date, int car, int cust) {
 		super();
 		this.orderID = orderID;
 		this.date = date;
@@ -123,7 +130,7 @@ public class Order {
     }
 
     /**
-     * Gets the value of the cust property.
+     * Gets the value of the customer property.
      * 
      */
     public int getCust() {
@@ -131,11 +138,10 @@ public class Order {
     }
 
     /**
-     * Sets the value of the cust property.
+     * Sets the value of the customer property.
      * 
      */
     public void setCust(int value) {
         this.cust = value;
     }
-
 }

@@ -29,25 +29,37 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 		List<Order> List = new ArrayList<Order>();
 		String strSelect = "select * from orders ORDER BY OrderID";
 
-		ResultSet rset = stmt.executeQuery(strSelect);
+		ResultSet dataset = stmt.executeQuery(strSelect);
 
-		while (rset.next()) {
-			int OrderID = rset.getInt("OrderID");
-			Date Date = rset.getDate("Date");
-			int cust = rset.getInt("CustID");
-			int car = rset.getInt("CarID");
+		while (dataset.next()) {
+			int OrderID = dataset.getInt("OrderID");
+			Date Date = dataset.getDate("Date");
+			int cust = dataset.getInt("CustID");
+			int car = dataset.getInt("CarID");
 
-			// Order s = new Order(OrderID, Date, cust, car);
-			Order s = new Order(car, Date, car, car);
+			Order s = new Order(OrderID, Date, cust, car);
+			// Order s = new Order(car, Date, car, car);
 
 			s.setOrderID(OrderID);
-			// s.setDate(Date);
+			s.setDate(Date);
 			s.setCar(car);
 			s.setCust(cust);
 
 			List.add(s);
 		}
 		return List;
+	}
+
+	@Override
+	public void createOrder(Order order) throws RemoteException, SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteOrder(Order order) throws RemoteException, SQLException {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
