@@ -46,7 +46,6 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 			s.setCust(cust);
 
 			List.add(s);
-			System.out.println(s);
 		}
 		System.out.println(List);
 		return List;
@@ -54,7 +53,8 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 
 	@Override
 	public void createOrder(Order order) throws RemoteException, SQLException {
-		
+		System.out.println("In create");
+
 	}
 
 	@Override
