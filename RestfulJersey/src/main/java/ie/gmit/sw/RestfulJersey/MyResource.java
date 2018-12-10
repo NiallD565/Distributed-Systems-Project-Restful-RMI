@@ -40,9 +40,9 @@ public class MyResource {
     public List<Order> getIt() throws MalformedURLException, RemoteException, NotBoundException, SQLException {
     	DatabaseService ds;
     	ds = (DatabaseService) Naming.lookup("rmi://127.0.0.1:1099/JDBC");
-    	System.out.println("Read entered");
+    	System.out.println("Read entered");// for testing
     	// ds.read();
-        return ds.read();
+        return ds.read();// calls the method in the interface to read the database
     }
 	
 

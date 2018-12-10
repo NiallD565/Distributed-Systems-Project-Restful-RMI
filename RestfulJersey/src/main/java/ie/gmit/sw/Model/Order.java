@@ -59,7 +59,7 @@ public class Order implements Serializable {
 	protected int car;
 	protected int cust;
 
-	public Order(int orderID, Date date, int car, int cust) {
+	public Order(int orderID, Date date, int car, int cust) {// sets the values to local variables
 		super();
 		
 		this.orderID = orderID;
@@ -68,7 +68,7 @@ public class Order implements Serializable {
 		this.cust = cust;
 	}
 	
-	public Order() {
+	public Order() {// null constructor
 		super();
 	}
 	

@@ -16,22 +16,23 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 
 	protected DatabaseServiceImpl() throws RemoteException, SQLException {
 		super();
+		// establishes connection with database
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/CUSTOMERCARS?useSSL=false", "root", "");
 		
 	}
 
 	@Override
 	public List<Order> read() throws SQLException {
-		System.out.println("In read");
+		System.out.println("In read");// for early testing
 
-		stmt = conn.createStatement();
+		stmt = conn.createStatement();// to create a SQL statement once a connection is made
 
 		List<Order> List = new ArrayList<Order>();
-		String strSelect = "select * from Orders;";
+		String strSelect = "select * from Orders;";// inputs a command into the database
 
 		ResultSet dataset = stmt.executeQuery(strSelect);
 
-		while (dataset.next()) {
+		while (dataset.next()) {// loops over the table to get all the values to be displayed
 			int OrderID = dataset.getInt("OrderID");
 			Date Date = dataset.getDate("Date");
 			int cust = dataset.getInt("CustID");
@@ -45,9 +46,9 @@ public class DatabaseServiceImpl extends UnicastRemoteObject implements Database
 			s.setCar(car);
 			s.setCust(cust);
 
-			List.add(s);
+			//List.add(s);// for testing on console
 		}
-		System.out.println(List);
+		//System.out.println(List);// for testing on console
 		return List;
 	}
 
